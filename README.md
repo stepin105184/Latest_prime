@@ -5,3 +5,5 @@
 ![C/C++ CI](https://github.com/stepin105184/Latest_prime/workflows/C/C++%20CI/badge.svg)
 
 ![cppcheck-action](https://github.com/stepin105184/Latest_prime/workflows/cppcheck-action/badge.svg)
+
+![Unit testing](https://github.com/stepin105184/Latest_prime/workflows/Unit%20testing/badge.svg)
