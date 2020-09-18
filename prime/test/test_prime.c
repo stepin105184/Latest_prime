@@ -21,7 +21,7 @@ void test_non_prime(void)
 int test_main(void)
 {
 /* Initiate the Unity Test Framework */
-  UNITY_BEGIN();
+  UNITY_BEGI();
 
 /* Run Test functions */
   RUN_TEST(test_prime);
