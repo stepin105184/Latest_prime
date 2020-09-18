@@ -1,33 +1,48 @@
 
-#include "unity.h"
-#include "prime.h"
-/* Required by the unity test framework */
-void setUp(){}
-/* Required by the unity test framework */
-void tearDown(){}
+#include <CUnit/Basic.h>
+#include <CUnit/CUnit.h>
 
-void test_prime(void)
-{
-  TEST_ASSERT_EQUAL(0, prime(2));
-  TEST_ASSERT_EQUAL(0, prime(3));
+/* Modify these two lines according to the project */
+#include <prime.h>
+#define PROJECT_NAME    "Prime"
+
+/* Prototypes for all the test functions */
+void test_prime(void);
+
+
+/* Start of the application test */
+int main() {
+/* Note: Do not edit START*/
+  /*Initialize and setup the Test Framework */
+  if (CUE_SUCCESS != CU_initialize_registry())
+    return CU_get_error();
+  CU_pSuite suite = CU_add_suite(PROJECT_NAME, 0, 0);
+/* Note: Do not edit END */
+  
+  
+  /* Add your test functions in this format for testing*/
+  CU_add_test(suite, "prime", test_prime);
+ 
+
+
+/* Note: Do not edit START*/
+  /* Setup Test Framework to output the result to Screen */
+  CU_basic_set_mode(CU_BRM_VERBOSE);
+  
+  /* run the unit test framework*/
+  CU_basic_run_tests();
+  
+  /* Cleaning the Resources used by Unit test framework */
+  CU_cleanup_registry();
+/* Note: Do not edit END */
+  return 0;
 }
-void test_non_prime(void)
-{
-  TEST_ASSERT_EQUAL(1, prime(4));
-  TEST_ASSERT_EQUAL(1, prime(16));
+
+/* Write all the test functions */ 
+void test_prime(void) {
+  CU_ASSERT(0 == prime(5));
+  
+ 
 }
 
 
-int test_main(void)
-{
-/* Initiate the Unity Test Framework */
-  UNITY_BEGIN();
-
-/* Run Test functions */
-  RUN_TEST(test_prime);
-  RUN_TEST(test_non_prime);
-
-
-  /* Close the Unity Test Framework */
-  return UNITY_END();
-}
