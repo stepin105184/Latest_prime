@@ -8,7 +8,7 @@ void tearDown(){}
 
 void test_prime(void)
 {
-  TEST_ASSERT_EQUAL(0, prime(24));
+  TEST_ASSERT_EQUAL(0, prime(2));
   TEST_ASSERT_EQUAL(0, prime(3));
 }
 void test_non_prime(void)
